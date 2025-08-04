@@ -70,3 +70,38 @@ form.addEventListener('submit', (e) => {
   }, 500);
 });
 
+
+
+
+        // Récupérer les éléments du DOM
+        const modal = document.getElementById('myModal');
+        const modalIframe = document.getElementById('modalIframe');
+        const closeBtn = document.querySelector('.close-button');
+        const links = document.querySelectorAll('.open-modal-link');
+
+        // Gérer le clic sur le lien
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Empêche le lien de s'ouvrir normalement
+                const urlToLoad = event.target.getAttribute('data-url'); // Récupère l'URL du lien
+
+                if (urlToLoad) {
+                    modalIframe.src = urlToLoad; // Charge l'URL dans l'iframe
+                    modal.style.display = 'flex'; // Affiche la fenêtre modale
+                }
+            });
+        });
+
+        // Gérer la fermeture de la fenêtre
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none'; // Cache la fenêtre modale
+            modalIframe.src = ''; // Réinitialise l'iframe pour éviter la lecture audio/vidéo en arrière-plan
+        });
+
+        // Fermer la fenêtre si on clique à l'extérieur
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                modalIframe.src = '';
+            }
+        });
