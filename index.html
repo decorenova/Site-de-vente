@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,24 +12,27 @@
   <title>CSS Text Animation Effects</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="create_a_cubist-insp.png" type="image/png">
 </head>
 
 <body>
 
- <!-- Header & Navigation -->
+  <!-- Header & Navigation -->
   <header class="header">
-
+    <div class="logo_logo-img">
       <img src="create_a_cubist-insp.png" alt="" class="logo-image">
-      <div >
-        
-      <h1 class="logo">Agence Bour</h1>
+        <h1 class="logo-text">Agence Bour</h1>
+    </div>  
+    <div>
+
       <nav>
         <ul class="nav-links">
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#projets">Projets</a></li>
           <li><a href="#apropos">À propos</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -37,112 +42,167 @@
           <span></span>
         </div>
       </nav>
-      </div>
+    </div>
   </header>
 
-  <!-- Accueil -->  
+  <!-- Accueil -->
 
   <section id="accueil" class="hero">
-  <!-- <canvas id="dot-grid" style="top:0"></canvas> -->
+    <!-- <canvas id="dot-grid" style="top:0"></canvas> -->
     <div class="container">
-      <h2>PARCE QUE LA CONCURRENCE N'ATTEND PAS.</h2>
-      <p>Nous vous aidons à briller en ligne avec des solutions sur mesure et à donner une grande visibilité à vos services. Que ce soit par la création d'un site web sur-mesure, l'optimisation de votre référencement (SEO) ou le lancement de campagnes publicitaires percutantes, nous avons les outils pour vous faire remarquer.</p>
-      <a href="#contact" class="btn">Lancez-vous</a>
+      <h2>Ne restez pas dans l'ombre du <span class="digital">digital</span>.</h2>
+      <h3>sites web • marketing digital • SEO</h3>
+      <p>Nous vous aidons à briller en ligne avec des solutions sur mesure et à donner une grande visibilité à vos
+        services. Que ce soit par la création d'un site web sur-mesure, l'optimisation de votre référencement (SEO) ou
+        le lancement de campagnes publicitaires percutantes, nous avons les outils pour vous faire remarquer.</p>
+        <a href="#contact"  id="bouton1">Lancez-vous</a>
     </div>
   </section>
 
   <!-- <div class="section-divider"></div> Barre de séparation -->
 
   <!-- Services -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2 class="section-title" >Nos Services</h2>
-      <div class="services-grid-flex">
-        <div class="service-card-marketing">
-          <i class="fas fa-bullhorn"></i>
-          <h3>Marketing Digital</h3>
-          <p>Stratégies efficaces pour booster votre visibilité en ligne.</p>
-          <p style=" margin-top: 20px; max-width: 800px; ">Nous développerons votre marketing digital via les réseaux sociaux en valorisant vos services par du contenu ciblé (visuels, vidéos, témoignages). L'objectif est d'engager votre audience, de renforcer votre crédibilité et de générer des opportunités commerciales.</p>
-          <section class="social-icons-section">
-            <div class="social-icons-container">
-              <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
-              <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
-              <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-            </div>
-          </section>
-        </div>
-      <div class="services-grid">
+ <!-- ========== SECTION SERVICES - HTML CORRIGÉ ========== -->
+<section id="services" class="section section-services">
+  <div class="container">
+    <h2 class="section-title">Nos Services</h2>
+    
+    <!-- Service principal - Marketing Digital -->
+    <div class="service-featured">
+      <div class="service-featured-icon">
+        <i class="fas fa-bullhorn"></i>
+      </div>
+      <h3>Marketing Digital</h3>
+      <p class="service-featured-subtitle">Stratégies efficaces pour booster votre visibilité en ligne.</p>
+      <p class="service-featured-description">
+        Nous développerons votre marketing digital via les réseaux sociaux en valorisant vos services par du contenu ciblé (visuels, vidéos, témoignages). L'objectif est d'engager votre audience, de renforcer votre crédibilité et de générer des opportunités commerciales.
+      </p>
+    </div>
 
-        <div class="service-card ">
+    <!-- Grille des autres services -->
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
           <i class="fas fa-laptop-code"></i>
-          <h3>Développement Web</h3>
-          <p>Sites modernes, responsives et performants pour tous vos besoins.</p>
         </div>
-        <div class="service-card">
+        <h3>Développement Web</h3>
+        <p>Sites modernes, responsives et performants pour tous vos besoins.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
           <i class="fas fa-paint-brush"></i>
-          <h3>Design Graphique</h3>
-          <p>Identité visuelle forte et cohérente pour votre marque.</p>
         </div>
-        <div class="service-card">
-          <i class="fas fa-magnifying-glass"></i> <!--Logo SEO-->
-          <h3>SEO</h3>
-          <p>Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients.</p>
+        <h3>Design Graphique</h3>
+        <p>Identité visuelle forte et cohérente pour votre marque.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-magnifying-glass"></i>
         </div>
+        <h3>SEO</h3>
+        <p>Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients.</p>
       </div>
     </div>
-  </section>
-
-
-<section id="projets" class="section alt">
-  <div class="container">
-    <h2 class="projets-title">Projets</h2>
-    <p class="projets-intro">Nous sommes une équipe passionnée par le web, la technologie et l'innovation. Depuis plus de 10 ans, nous accompagnons nos clients dans leur transformation digitale.</p>
-    <div class="projets-grid">
-      <div class="projet-item">
-        <h3 class="projet-titre">Site d'agence de rénovation parisienne</h3>
-        <div class="website-preview">
-          <a href="https://ursul-vasili.pro/" class="open-modal-link" target="_blank" title="Aller au site Uteu.pro">
-            <img src="decorenova.jpg" alt="Aperçu du site de l'agence de décoration et de rénovation" class="image-lien-decorenova">
-          </a>
-        </div>
-        <p class="projet-description">Site pour l'agence Uteu.pro</p>
-      </div>
-      <div class="projet-item">
-        <h3 class="projet-titre">Mon portfolio personnel</h3>
-        <div class="website-preview">
-          <a href="https://ab-75.github.io/andrebozo-portfolio.com/" class="open-modal-link" target="_blank" title="Aller au portfolio">
-            <img src="portofolio.jpg" alt="Aperçu du site de portfolio" class="image-lien-decorenova">
-          </a>
-        </div>
-        <p class="projet-description">Mon portfolio</p>
-      </div>
-      </div>
   </div>
+</section>
+
+
+<!-- Nos projets-->
+
+
+<section id="projets" class="section-projets">
+   <div class="container-projets">
+      <h2 class="projets-title">Nos Projets</h2>
+      
+      <div class="projets-grid">
+         
+         <!-- Projet 1 -->
+         <a href="https://ab-75.github.io/andrebozo-portfolio.com/" target="_blank" class="projet-card">
+            <div class="projet-preview">
+               <iframe src="https://ab-75.github.io/andrebozo-portfolio.com/" loading="lazy"></iframe>
+               <div class="projet-overlay">
+                  <span class="projet-cta">Voir le projet</span>
+               </div>
+            </div>
+            <div class="projet-info">
+               <h3>Portfolio</h3>
+               <p>Portfolio, projet d'études.</p>
+            </div>
+         </a>
+
+         <!-- Projet 2 -->
+         <a href="https://ursul-vasili.pro/" target="_blank" class="projet-card">
+            <div class="projet-preview">
+               <iframe src="https://ursul-vasili.pro/" loading="lazy"></iframe>
+               <div class="projet-overlay">
+                  <span class="projet-cta">Voir le projet</span>
+               </div>
+            </div>
+            <div class="projet-info">
+               <h3>Ursul Vasili rénovation</h3>
+               <p>Site vitrine pro pour un expert renovateur et artisan Parisien.</p>
+            </div>
+         </a>
+
+         <!-- Projet 3 -->
+         <a href="https://jospeh-coiffure.pro/" target="_blank" class="projet-card">
+            <div class="projet-preview">
+               <iframe src="https://jospeh-coiffure.pro/" loading="lazy"></iframe>
+               <div class="projet-overlay">
+                  <span class="projet-cta">Voir le projet</span>
+               </div>
+            </div>
+            <div class="projet-info">
+               <h3>Joseph coiffure</h3>
+               <p>Site vitrine pro pour joseph, coiffeur à paris, Madeleine.</p>
+            </div>
+         </a>
+
+         <!-- Projet 4 -->
+
+         <!-- <a href="https://votresite4.com" target="_blank" class="projet-card">
+            <div class="projet-preview">
+               <iframe src="https://votresite4.com" loading="lazy"></iframe>
+               <div class="projet-overlay">
+                  <span class="projet-cta">Voir le projet</span>
+               </div>
+            </div>
+            <div class="projet-info">
+               <h3>Nom du Projet 4</h3>
+               <p>Description courte du projet</p>
+            </div>
+         </a> -->
+
+        <!-- Notre marque de fabrique, la simplicité et la visibilité. -->
+
+      </div>
+   </div>
 </section>
 
   <!-- <div class="section-divider"></div> Barre de séparation -->
 
   <!-- À propos -->
-  <section id="apropos" class="section alt" style="    background-color: transparent;">
+  <section id="apropos" class="section-apropos">
     <div class="container">
       <h2 class="section-title">À propos</h2>
       <div class="about-content">
-        <div class="about-text">
-          <p class="p-apropos">Nous sommes une équipe passionnée par le web, la technologie et l'innovation. Depuis plus de 10 ans, nous accompagnons nos clients dans leur transformation digitale.</p>
+        <div class="about-text" >
+          <p class="p-apropos">Nous sommes une équipe passionnée par le web, la technologie et l'innovation. Depuis plus
+            de 10 ans, nous accompagnons nos clients dans leur transformation digitale.</p>
         </div>
         <div class="about-stats">
           <div class="stat">
-            <span class="number" data-target="250">0</span>
+            <span class="number" data-target="6">0</span>
             <p>Projets réalisés</p>
           </div>
           <div class="stat">
-            <span class="number" data-target="150">0</span>
-            <p>Clients satisfaits</p>
+            <span class="number" data-target="3">0</span>
+            <p>clients livrés</p>
           </div>
           <div class="stat">
-            <span class="number" data-target="10">0</span>
+            <span class="number" data-target="5">0</span>
             <p>Années d'expérience</p>
           </div>
         </div>
@@ -151,17 +211,62 @@
   </section>
 
 
+
+<section id="contact" class="section-contacts">
+   <div class="container">
+    <h2 class="section-title">contacts</h2>
+    	<form action="https://formspree.io/f/mkgplqwe" method="POST" class="form_contact">
+			
+			<div class="div-form">
+				<div class="contactform-p">
+					<div>
+						<!-- Champ email -->
+						<input 
+							type="email" 
+							id="email" 
+							name="email" 
+							placeholder="e-mail ..."  
+							required
+						>
+
+						<!-- Champ message -->
+						<textarea 
+							id="message" 
+							name="message" 
+							placeholder="Je voudrais me lancer dans un nouveau projet ..." 
+							required
+						></textarea>
+					</div>
+				</div>
+
+				<button type="submit" id="bouton6" style="border: none; margin-left: 0; width: auto; min-width: 150px;">
+					Envoyer
+				</button>
+
+				<p>
+					Nous sommes ouverts à tout type de projets, sites web, campagnes publicitaires, refonte graphique de vos sites, vous nous donnez vos idées, on s'occupe du reste !
+        
+      
+				</p>
+			</div>
+			
+		</form>
+   </div>
+
+</section>
+
   <!-- Footer -->
-<footer>
-  <div class="container">
-    <p>&copy; 2025 MonEntreprise. Tous droits réservés. | Entreprise française 🇫🇷</p>
-    <div class="social-links">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026-Agence BOUR | Entreprise française 🇫🇷</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </body>
+
 </html>
