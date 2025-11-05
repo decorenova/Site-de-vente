@@ -70,8 +70,25 @@ form.addEventListener('submit', (e) => {
   }, 500);
 });
 
+// === Header qui disparaît au scroll ===
+let lastScrollTop = 0;
+const header = document.querySelector('header');
 
-
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (currentScroll > lastScrollTop && currentScroll > 100) {
+    // Scroll vers le bas - cacher le header
+    header.style.transform = 'translateY(-150px)';
+    header.style.opacity = '0';
+  } else {
+    // Scroll vers le haut - montrer le header
+    header.style.transform = 'translateY(0)';
+    header.style.opacity = '1';
+  }
+  
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
 
         // Récupérer les éléments du DOM
         const modal = document.getElementById('myModal');
@@ -104,4 +121,5 @@ form.addEventListener('submit', (e) => {
                 modal.style.display = 'none';
                 modalIframe.src = '';
             }
+
         });
