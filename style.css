@@ -52,8 +52,45 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
+
+header.hidden {
+  transform: translateY(-150px);
+}
+
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: var(--light);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
 
 .logo_logo-img {
   display: flex;
@@ -497,27 +534,76 @@ canvas {
   line-height: 1.5;
 }
 
-/* Responsive */
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
-  .section-projets {
-    padding: 60px 15px;
+  header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    flex-wrap: wrap;
   }
 
-  .projets-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
+  .logo_logo-img {
+    padding: 5px 15px;
   }
 
-  .projets-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .logo-image {
+    height: 50px;
   }
 
-  .projet-preview {
-    height: 200px;
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  /* Afficher le burger sur mobile */
+  .burger {
+    display: flex;
+  }
+
+  /* Navigation mobile */
+  nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0;
+    background: rgba(51, 51, 51, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  nav.active {
+    max-height: 400px;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: rgba(132, 93, 235, 0.2);
   }
 }
-
 
 
 /* ========== Modal ========== */

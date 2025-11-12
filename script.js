@@ -1,10 +1,37 @@
 // === Menu Burger Responsive ===
 const burger = document.querySelector('.burger');
+const nav = document.querySelector('nav');
 const navLinks = document.querySelector('.nav-links');
 
 burger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  nav.classList.toggle('active');
   burger.classList.toggle('open');
+});
+
+// Fermer le menu quand on clique sur un lien
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+    burger.classList.remove('open');
+  });
+});
+
+// === Navbar qui disparaît au scroll vers le bas et réapparaît au scroll vers le haut ===
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    // Scroll vers le bas - cacher la navbar
+    header.classList.add('hidden');
+  } else {
+    // Scroll vers le haut - afficher la navbar
+    header.classList.remove('hidden');
+  }
+
+  lastScrollY = currentScrollY;
 });
 
 // === Compteurs animés ===
@@ -22,7 +49,7 @@ function animateCounters() {
 
       if (current < target) {
         counter.innerText = current + increment;
-        setTimeout(updateCount, 10);
+        setTimeout(updateCount, 75);
       } else {
         counter.innerText = target;
       }
@@ -32,94 +59,77 @@ function animateCounters() {
   });
 }
 
-// Déclencher l’animation au scroll (quand visible)
+// Déclencher l'animation au scroll (quand visible)
 window.addEventListener('scroll', () => {
   const aboutSection = document.querySelector('#apropos');
-  const sectionTop = aboutSection.offsetTop;
-  const sectionHeight = aboutSection.offsetHeight;
-  const scrollY = window.scrollY + window.innerHeight;
+  if (aboutSection) {
+    const sectionTop = aboutSection.offsetTop;
+    const sectionHeight = aboutSection.offsetHeight;
+    const scrollY = window.scrollY + window.innerHeight;
 
-  if (!started && scrollY >= sectionTop + sectionHeight / 4) {
-    animateCounters();
-    started = true;
+    if (!started && scrollY >= sectionTop + sectionHeight / 4) {
+      animateCounters();
+      started = true;
+    }
   }
 });
 
 // === Formulaire de contact ===
 const form = document.getElementById('contact-form');
-const message = document.getElementById('form-message');
+if (form) {
+  const message = document.getElementById('form-message');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  const nom = form.nom.value.trim();
-  const email = form.email.value.trim();
-  const texte = form.message.value.trim();
+    const nom = form.nom.value.trim();
+    const email = form.email.value.trim();
+    const texte = form.message.value.trim();
 
-  if (nom === '' || email === '' || texte === '') {
-    message.textContent = 'Veuillez remplir tous les champs.';
-    message.style.color = 'red';
-    return;
+    if (nom === '' || email === '' || texte === '') {
+      message.textContent = 'Veuillez remplir tous les champs.';
+      message.style.color = 'red';
+      return;
+    }
+
+    setTimeout(() => {
+      message.textContent = 'Merci pour votre message !';
+      message.style.color = 'green';
+      form.reset();
+    }, 500);
+  });
+}
+
+// === Modal ===
+const modal = document.getElementById('myModal');
+if (modal) {
+  const modalIframe = document.getElementById('modalIframe');
+  const closeBtn = document.querySelector('.close-button');
+  const links = document.querySelectorAll('.open-modal-link');
+
+  links.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const urlToLoad = event.target.getAttribute('data-url');
+
+      if (urlToLoad) {
+        modalIframe.src = urlToLoad;
+        modal.style.display = 'flex';
+      }
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      modalIframe.src = '';
+    });
   }
 
-  // Simule un envoi (tu peux brancher à un backend ici)
-  setTimeout(() => {
-    message.textContent = 'Merci pour votre message !';
-    message.style.color = 'green';
-    form.reset();
-  }, 500);
-});
-
-// === Header qui disparaît au scroll ===
-let lastScrollTop = 0;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  
-  if (currentScroll > lastScrollTop && currentScroll > 100) {
-    // Scroll vers le bas - cacher le header
-    header.style.transform = 'translateY(-150px)';
-    header.style.opacity = '0';
-  } else {
-    // Scroll vers le haut - montrer le header
-    header.style.transform = 'translateY(0)';
-    header.style.opacity = '1';
-  }
-  
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
-
-        // Récupérer les éléments du DOM
-        const modal = document.getElementById('myModal');
-        const modalIframe = document.getElementById('modalIframe');
-        const closeBtn = document.querySelector('.close-button');
-        const links = document.querySelectorAll('.open-modal-link');
-
-        // Gérer le clic sur le lien
-        links.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault(); // Empêche le lien de s'ouvrir normalement
-                const urlToLoad = event.target.getAttribute('data-url'); // Récupère l'URL du lien
-
-                if (urlToLoad) {
-                    modalIframe.src = urlToLoad; // Charge l'URL dans l'iframe
-                    modal.style.display = 'flex'; // Affiche la fenêtre modale
-                }
-            });
-        });
-
-        // Gérer la fermeture de la fenêtre
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none'; // Cache la fenêtre modale
-            modalIframe.src = ''; // Réinitialise l'iframe pour éviter la lecture audio/vidéo en arrière-plan
-        });
-
-        // Fermer la fenêtre si on clique à l'extérieur
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                modalIframe.src = '';
-            }
-
-        });
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      modalIframe.src = '';
+    }
+  });
+}
