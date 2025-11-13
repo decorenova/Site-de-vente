@@ -929,33 +929,93 @@ footer {
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
   header {
+    top: 10px;
     left: 10px;
     right: 10px;
-    padding: 15px;
+    padding: 10px 15px;
+    flex-wrap: nowrap;
+  }
+
+  .logo_logo-img {
+    padding: 5px 15px;
   }
 
   .logo-image {
     height: 50px;
-    padding: 12px 30px;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: var(--dark);
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 100%;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  .logo-text {
+    font-size: 1.3rem;
   }
 
-  .nav-links.active {
-    display: flex;
+  /* Afficher le burger sur mobile */
+  .burger {
+    display: flex !important;
   }
 
+  /* CACHER la nav desktop */
+  nav {
+    display: none !important;
+  }
+
+  /* AFFICHER la nav mobile quand active - VERSION ULTRA COMPACTE */
+  nav.active {
+    display: block !important;
+    position: absolute !important;
+    top: 75px !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100% - 20px) !important;
+    padding: 10px !important;
+    background: rgba(26, 26, 46, 0.92) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(132, 93, 235, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    z-index: 999 !important;
+  }
+
+  /* Forcer l'affichage des liens - VERSION ULTRA COMPACTE */
+  nav.active .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  nav.active .nav-links li {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  nav.active .nav-links a {
+    display: block !important;
+    padding: 10px 16px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  nav.active .nav-links a:hover {
+    background: rgba(132, 93, 235, 0.2) !important;
+    border-color: rgba(132, 93, 235, 0.5) !important;
+    color: #fff !important;
+    transform: translateX(5px) !important;
+  }
+
+  /* Autres ajustements */
   .section {
     margin: 20px 10px;
     padding: 40px 15px;
@@ -982,26 +1042,3 @@ footer {
   .about-stats {
     flex: 1 1 100%;
   }
-
-  .section-contacts {
-    padding: 60px 15px;
-  }
-
-  .form_contact {
-    padding: 30px 20px;
-  }
-
-  #bouton6 {
-    width: 100% !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .service-featured h3 {
-    font-size: 1.4rem;
-  }
-
-  .service-card h3 {
-    font-size: 1.2rem;
-  }
-}
