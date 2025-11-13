@@ -3,11 +3,23 @@ const burger = document.querySelector('.burger');
 const nav = document.querySelector('nav');
 const navLinks = document.querySelector('.nav-links');
 
-burger.addEventListener('click', () => {
-  nav.classList.toggle('active');
-  burger.classList.toggle('open');
-});
+if (burger && nav) {
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.classList.toggle('open');
+    console.log('Burger clicked!'); // Pour vérifier
+  });
 
+  // Fermer le menu quand on clique sur un lien
+  if (navLinks) {
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.classList.remove('open');
+      });
+    });
+  }
+}
 // Fermer le menu quand on clique sur un lien
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
