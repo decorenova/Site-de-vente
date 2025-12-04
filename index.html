@@ -49,7 +49,6 @@
   <!-- Accueil -->
 
   <section id="accueil" class="hero">
-    <!-- <canvas id="dot-grid" style="top:0"></canvas> -->
     <div class="container">
       <h2>Ne restez pas dans l'ombre du <span class="digital">digital</span>.</h2>
       <h3>sites web • marketing digital • SEO</h3>
@@ -60,55 +59,137 @@
     </div>
   </section>
 
-  <!-- <div class="section-divider"></div> Barre de séparation -->
 
-  <!-- Services -->
- <!-- ========== SECTION SERVICES - HTML CORRIGÉ ========== -->
-<section id="services" class="section section-services">
-  <div class="container">
+
+  <!-- ========== SECTION SERVICES ========== -->
+<div class="container">
     <h2 class="section-title">Nos Services</h2>
     
-    <!-- Service principal - Marketing Digital -->
-    <div class="service-featured">
-      <div class="service-featured-icon">
-        <i class="fas fa-bullhorn"></i>
+    <!-- Conteneur unique pour tous les services -->
+    <div class="services-bubble">
+      
+      <!-- Marketing Digital (restructure pour s'intégrer) -->
+      <div class="service-main">
+        <div class="service-main-icon">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <h3>Marketing Digital</h3>
+        <p class="service-main-subtitle">Stratégies efficaces pour booster votre visibilité en ligne.</p>
+        <p class="service-main-description">
+          Nous développerons votre marketing digital via les réseaux sociaux en valorisant vos services par du contenu ciblé (visuels, vidéos, témoignages). L'objectif est d'engager votre audience, de renforcer votre crédibilité et de générer des opportunités commerciales.
+        </p>
       </div>
-      <h3>Marketing Digital</h3>
-      <p class="service-featured-subtitle">Stratégies efficaces pour booster votre visibilité en ligne.</p>
-      <p class="service-featured-description">
-        Nous développerons votre marketing digital via les réseaux sociaux en valorisant vos services par du contenu ciblé (visuels, vidéos, témoignages). L'objectif est d'engager votre audience, de renforcer votre crédibilité et de générer des opportunités commerciales.
-      </p>
+
+      <!-- Grille des autres services (sans bordure individuelle) -->
+      <div class="services-inner-grid">
+        <div class="service-item">
+          <div class="service-item-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Développement Web</h3>
+          <p>Sites modernes, responsives et performants pour tous vos besoins.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>Design Graphique</h3>
+          <p>Identité visuelle forte et cohérente pour votre marque.</p>
+        </div>
+
+        <div class="service-item">
+          <div class="service-item-icon">
+            <i class="fas fa-magnifying-glass"></i>
+          </div>
+          <h3>SEO</h3>
+          <p>Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients.</p>
+        </div>
+      </div>
+      
     </div>
+</div>
+</section>
 
-    <!-- Grille des autres services -->
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-laptop-code"></i>
+
+<section id="tarifs" class="section section-packs">
+  <div class="container">
+    <h2 class="section-title">Nos Tarifs</h2>
+    
+    <div class="packs-grid">
+      
+      <!-- Pack 1 -->
+      <div class="pack-card">
+        <div class="pack-image">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Starter Pack">
+          <div class="pack-label">Pack 1</div>
         </div>
-        <h3>Développement Web</h3>
-        <p>Sites modernes, responsives et performants pour tous vos besoins.</p>
+        <div class="pack-content">
+          <h3 class="pack-title">Starter Pack</h3>
+          <p class="pack-subtitle">Pour commerçants sans site ni visibilité</p>
+          <ul class="pack-features">
+            <li><i class="fas fa-check"></i> Audit de visibilité gratuit</li>
+            <li><i class="fas fa-check"></i> Site web responsive</li>
+            <li><i class="fas fa-check"></i> Développement sur-mesure</li>
+            <li><i class="fas fa-check"></i> Campagne publicitaire</li>
+          </ul>
+          <div class="pack-price">
+            <span class="price">À partir de 3450€</span>
+            <span class="tax">HT</span>
+          </div>
+          <a href="starter-pack.html" class="pack-btn">Je me lance !</a>
+        </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-paint-brush"></i>
+      <!-- Pack 2 -->
+      <div class="pack-card">
+        <div class="pack-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Grand Ménage">
+          <div class="pack-label">Pack 2</div>
         </div>
-        <h3>Design Graphique</h3>
-        <p>Identité visuelle forte et cohérente pour votre marque.</p>
+        <div class="pack-content">
+          <h3 class="pack-title">Grand Ménage</h3>
+          <p class="pack-subtitle">Pour sites vieux ou mal conçus</p>
+          <ul class="pack-features">
+            <li><i class="fas fa-check"></i> Refonte graphique complète</li>
+            <li><i class="fas fa-check"></i> Migration technique</li>
+            <li><i class="fas fa-check"></i> Optimisation SEO</li>
+            <li><i class="fas fa-check"></i> Formation prise en main</li>
+          </ul>
+          <div class="pack-price">
+            <span class="price">À partir de 4500€</span>
+            <span class="tax">HT</span>
+          </div>
+          <a href="pack-grand-menage.html" class="pack-btn">Je me lance !</a>
+        </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-magnifying-glass"></i>
+      <!-- Pack 3 -->
+      <div class="pack-card">
+        <div class="pack-image">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Boost clientèle">
+          <div class="pack-label">Pack 3</div>
         </div>
-        <h3>SEO</h3>
-        <p>Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients.</p>
+        <div class="pack-content">
+          <h3 class="pack-title">Clientèle Boost</h3>
+          <p class="pack-subtitle">Pour ceux qui ont tout mais pas de clients</p>
+          <ul class="pack-features">
+            <li><i class="fas fa-check"></i> Stratégie marketing</li>
+            <li><i class="fas fa-check"></i> Campagnes ciblées</li>
+            <li><i class="fas fa-check"></i> Optimisation conversion</li>
+            <li><i class="fas fa-check"></i> Analyse concurrentielle</li>
+          </ul>
+          <div class="pack-price">
+            <span class="price">À partir de 5000€</span>
+            <span class="tax">HT</span>
+          </div>
+          <a href="pack-grand-menage.html" class="pack-btn">Je me lance !</a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
-
 
 <!-- Nos projets-->
 
