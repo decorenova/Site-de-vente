@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commander le Grand Ménage - Agence BAP</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="create_a_cubist-insp.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- Header simplifié -->
+  <header class="header">
+    <div class="logo_logo-img">
+      <img src="create_a_cubist-insp.png" alt="" class="logo-image">
+      <h1 class="logo-text">Agence BAP</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Retour à l'accueil</a></li>
+        <li><a href="index.html#tarifs">Voir les tarifs</a></li>
+      </ul>
+    </nav>
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Section de commande -->
+  <section class="section-commande">
+    <div class="container-commande">
+      
+      <!-- En-tête de la page -->
+      <div class="commande-header">
+        <a href="index.html#tarifs" class="btn-retour">
+          <i class="fas fa-arrow-left"></i> Retour aux tarifs
+        </a>
+        <h1 class="commande-title">Commander le Grand Ménage</h1>
+        <p class="commande-subtitle">Remplissez le formulaire ci-dessous pour démarrer votre projet</p>
+      </div>
+
+      <div class="commande-content">
+        
+        <!-- Colonne gauche : Récapitulatif du pack -->
+        <div class="pack-recap">
+          <div class="recap-header">
+            <div class="recap-image">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Grand Ménage">
+              <div class="recap-badge">Pack 2</div>
+            </div>
+            <h2>Grand Ménage</h2>
+            <p class="recap-subtitle">Pour sites vieux ou mal conçus</p>
+          </div>
+
+          <div class="recap-features">
+            <h3>Ce qui est inclus :</h3>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Refonte graphique complète</li>
+              <li><i class="fas fa-check-circle"></i> Migration technique</li>
+              <li><i class="fas fa-check-circle"></i> Optimisation SEO</li>
+              <li><i class="fas fa-check-circle"></i> Formation prise en main</li>
+            </ul>
+          </div>
+
+          <div class="recap-price">
+            <span class="price-label">À partir de</span>
+            <span class="price-amount">4500€</span>
+            <span class="price-tax">HT</span>
+          </div>
+
+          <div class="recap-info">
+            <i class="fas fa-info-circle"></i>
+            <p>Un devis personnalisé vous sera envoyé sous 48h après réception de votre demande.</p>
+          </div>
+        </div>
+
+        <!-- Colonne droite : Formulaire -->
+        <div class="pack-form-container">
+          <form action="https://formspree.io/f/mldoyprn" method="POST" class="pack-form">
+            
+            <!-- Pack sélectionné (caché) -->
+            <input type="hidden" name="pack" value="Grand Ménage">
+
+            <h3 class="form-title">Vos informations</h3>
+
+            <div class="form-group">
+              <label for="nom">Nom complet *</label>
+              <input 
+                type="text" 
+                id="nom" 
+                name="nom" 
+                placeholder="Jean Dupont" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="entreprise">Nom de l'entreprise *</label>
+              <input 
+                type="text" 
+                id="entreprise" 
+                name="entreprise" 
+                placeholder="Mon Entreprise SAS" 
+                required
+              >
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="contact@exemple.fr" 
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="telephone">Téléphone *</label>
+                <input 
+                  type="tel" 
+                  id="telephone" 
+                  name="telephone" 
+                  placeholder="06 12 34 56 78" 
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="site-actuel">Site web actuel *</label>
+              <input 
+                type="url" 
+                id="site-actuel" 
+                name="site-actuel" 
+                placeholder="https://www.mon-site.fr"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="problemes">Quels sont les problèmes actuels de votre site ? *</label>
+              <textarea 
+                id="problemes" 
+                name="problemes" 
+                rows="4"
+                placeholder="Ex: Design obsolète, lent, pas responsive, mauvais référencement..." 
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Vos objectifs pour la refonte *</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4"
+                placeholder="Qu'attendez-vous de cette refonte ? Quelles sont vos attentes ?" 
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="rgpd" required>
+                <span>J'accepte que mes données soient utilisées pour traiter ma demande *</span>
+              </label>
+            </div>
+
+            <button type="submit" class="form-submit">
+              <i class="fas fa-paper-plane"></i>
+              Envoyer ma demande
+            </button>
+
+            <p class="form-note">
+              <i class="fas fa-shield-alt"></i>
+              Vos données sont sécurisées et ne seront jamais partagées
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Agence BAP | Entreprise française 🇫🇷</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
